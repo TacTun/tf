@@ -231,7 +231,7 @@ CONFIG_SUBSYSTEM_DTB_PADDING_SIZE=0x1000
 #
 # Firmware Version Configuration
 #
-CONFIG_SUBSYSTEM_HOSTNAME="ST3_MA-ZX2-20-2I-D9"
+CONFIG_SUBSYSTEM_HOSTNAME="TACTUN"
 CONFIG_SUBSYSTEM_HOSTNAME="ST3_MA-ZX2-20-2I-D9"
 CONFIG_SUBSYSTEM_FW_VERSION="1.00"
 
@@ -259,7 +259,7 @@ CONFIG_YOCTO_PARALLEL_MAKE=""
 #
 # Add pre-mirror url 
 #
-CONFIG_PRE_MIRROR_URL="http://petalinux.xilinx.com/sswreleases/rel-v${PETALINUX_VER%%.*}/downloads"
+CONFIG_PRE_MIRROR_URL="file://storage2t/common/Xilinx_Sources/downloads"
 
 #
 # Local sstate feeds settings
@@ -270,7 +270,7 @@ CONFIG_YOCTO_NETWORK_SSTATE_FEEDS=y
 #
 # Network sstate feeds URL
 #
-CONFIG_YOCTO_NETWORK_SSTATE_FEEDS_URL="http://petalinux.xilinx.com/sswreleases/rel-v${PETALINUX_VER%%.*}/arm/sstate-cache"
+CONFIG_YOCTO_NETWORK_SSTATE_FEEDS_URL="file://storage2t/common/Xilinx_Sources/sstate_arm_2020.2"
 # CONFIG_YOCTO_BB_NO_NETWORK is not set
 
 #

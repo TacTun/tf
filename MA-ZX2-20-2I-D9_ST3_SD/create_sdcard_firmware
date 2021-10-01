@@ -1,0 +1,18 @@
+#!/bin/bash - 
+
+set -e
+
+source /opt/petalinux-v2020.2/settings.sh
+petalinux-package --boot --fsbl images/linux/zynq_fsbl.elf --fpga ../ZX2/Mars_ZX2.bit --u-boot --force
+
+mkdir -p firmware_sdcard/p1_fat
+mkdir -p firmware_sdcard/p2_ext4
+rm -rf firmware_sdcard/p1_fat/*
+rm -rf firmware_sdcard/p2_ext4/*
+
+cp -rv images/linux/BOOT.BIN images/linux/boot.scr firmware_sdcard/p1_fat/
+cp -rv images/linux/image.ub firmware_sdcard/p1_fat/Image
+cp -rv images/linux/rootfs.tar.gz firmware_sdcard/p2_ext4/
+cp -rv README.sdcard firmware_sdcard/
+
+tar zcvf firmware_sdcard.tgz firmware_sdcard/

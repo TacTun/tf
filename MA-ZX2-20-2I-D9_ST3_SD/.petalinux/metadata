@@ -3,4 +3,4 @@ VALIDATE_HW_CHKSUM=1
 HARDWARE_CHECKSUM=0b3673a7a9cbc5c8e6534f76970cfc1a
 YOCTO_SDK=5ff8fc5f85d1566b314bb73eaa378212
 RFSCONFIG_CHKSUM=99cfda8d4f09e4f6c03856b66a5d80e5
-HARDWARE_PATH=/home/andrew/ab/tactun/MA-ZX2-20-2I-D9_ST3_SD/hardware/vivado_export/MA-ZX2-20-2I-D9_ST3.xsa
+HARDWARE_PATH=/storage2t/andrew/projects2t/.ab/tf/MA-ZX2-20-2I-D9_ST3_SD/hardware/vivado_export/MA-ZX2-20-2I-D9_ST3.xsa

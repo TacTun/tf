@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -e
+
+BOOT_MTD=/dev/mtd0
+BOOTENV_MTD=/dev/mtd1
+BOOTSCR_MTD=/dev/mtd2
+KERNEL_MTD=/dev/mtd3
+ROOTFS_MTD=/dev/mtd4
+
+BOOT=BOOT.BIN
+BOOTSCR=boot.scr
+KERNEL=image.ub
+ROOTFS=rootfs.jffs2
+
+echo
+echo "NOTE: This will upgrade all QSPI partitions"
+sleep 1
+echo -n "."
+sleep 1
+echo -n "."
+sleep 1
+echo -n "."
+sleep 1
+echo "."
+echo
+
+while true
+do
+    read -p "Do you wish to continue with the upgrade (y/n)? " CONFIRM
+    if [ "$CONFIRM" == "n" ] || [ "$CONFIRM" == "N" ]; then
+        echo "Quit."
+        exit 1
+    fi
+    if [ "$CONFIRM" == "y" ] || [ "$CONFIRM" == "Y" ]; then
+        break
+    fi
+done
+
+flashcp -v ${BOOT} ${BOOT_MTD}
+flashcp -v ${BOOTSCR} ${BOOTSCR_MTD}
+flashcp -v ${KERNEL} ${KERNEL_MTD}
+flashcp -v ${ROOTFS} ${ROOTFS_MTD}

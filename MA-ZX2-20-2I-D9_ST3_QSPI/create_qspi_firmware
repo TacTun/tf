@@ -1,0 +1,12 @@
+#!/bin/bash - 
+
+set -e
+
+source /opt/petalinux-v2020.2/settings.sh
+petalinux-package --boot --fsbl images/linux/zynq_fsbl.elf --fpga ../ZX2/Mars_ZX2.bit --u-boot --force
+
+mkdir -p firmware_qspi/
+rm -rf firmware_qspi/*
+cp -rv upgrade images/linux/rootfs.jffs2 images/linux/BOOT.BIN images/linux/image.ub images/linux/boot.scr firmware_qspi/
+
+tar zcvf firmware_qspi.tgz firmware_qspi/

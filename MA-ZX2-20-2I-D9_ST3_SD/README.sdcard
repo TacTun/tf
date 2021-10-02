@@ -1,5 +1,4 @@
-
-1) Files needed for SD-CARD boot:
+1) Files needed for SD-CARD boot, all files can be found in firmware_sdcard.tgz once extracted:
     BOOT.BIN
     boot.scr
     Image
